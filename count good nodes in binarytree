@@ -1,0 +1,24 @@
+public:
+    int goodNodes(TreeNode* root) {
+        int count=0;
+        
+        int maxvalueinthis;
+        if(!root)
+            return count;
+        solve(root,count,root->val);
+        return count;
+    }
+    
+   void solve(TreeNode *root,int &count,int maxvalueinthis)
+    {
+        if(root==NULL) return;
+        
+        if(root->val >= maxvalueinthis)
+        {
+            count+=1;
+            maxvalueinthis=root->val;
+        }
+        
+        solve(root->left,count,maxvalueinthis);
+        solve(root->right,count,maxvalueinthis);
+    }
