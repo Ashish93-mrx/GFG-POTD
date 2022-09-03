@@ -1,0 +1,53 @@
+bool isPossible( int mid, vector<int> &D, int N )
+    {
+        int donutsMade = 0 , i = 0 , cnt = 2 ; 
+        vector<int> a = D ;
+        
+        while( i < a.size() ){
+            if( a[i] <= mid )
+            {
+                donutsMade += 1 ;
+                a[i] = a[i] + (D[i] * cnt) ; 
+                cnt += 1 ;
+            } 
+            else 
+            {
+                i++ ; 
+                cnt = 2 ;
+            }
+            
+            if( donutsMade >= N ) 
+                return true ;
+        }
+        
+        return false ;
+        
+    }
+    
+    
+    int findMinTime(int N, vector<int>&A, int L){
+        //write your code here 
+        
+        sort( A.begin(), A.end() ) ;
+        
+        int l = A[0] , h = A[L-1] * N * N ;
+        
+        int ans ;
+        while( l <= h )
+        {
+            int mid = (l+h) / 2 ;
+            // cout << mid << "  " ;
+            if( isPossible( mid, A, N ) )
+            {
+                ans = mid ; 
+                // cout << ans << " " ;
+                h = mid - 1 ;
+            } 
+            else 
+            {
+                l = mid + 1 ;
+            }
+            
+        }
+        return ans ;
+    }
