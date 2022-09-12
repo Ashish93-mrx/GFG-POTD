@@ -1,0 +1,18 @@
+Node* solve(Node* n,int ele) 
+{
+  if(!n) 
+     return newNode(n);
+  if(ele<n->data) 
+     n->left=solve(n->left,ele); 
+  else
+     n->right=solve(n->right,ele); 
+ }
+
+Node* post_order(int pre[],int size) 
+{ 
+   Node* n=newNode(pre[0]);
+   for(int i=1;i<size;i++) 
+   {
+      solve(n,pre[i]);
+   }
+   return n;
