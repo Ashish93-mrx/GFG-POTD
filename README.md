@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Ashish93-mrx
 - 👀 I’m interested in ...c++ programming
-- 🌱 I’m currently learning ...cp
+- 🌱 I’m currently learning ...android studio
 - 💞️ I’m looking to collaborate on ...projects
 - 📫 How to reach me ...
 
